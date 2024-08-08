@@ -1,6 +1,6 @@
 <template>
     <section class="results">
-        <div class="results-list" v-if="movies.length > 0 && isLoading === false">
+        <div class="results-list">
             <MovieComponent
             v-for="item in movies"
             :id="item.imdbID"

@@ -27,30 +27,41 @@ const store = createStore({
         },
         setTotalPages(state, payload) {
             state.totalPages = Math.ceil(payload/10);
-        }
+        },
+        setCurrentPage(state, payload) {
+            state.selectedPage = payload;
+        },
     },
     getters: {},
       
     actions: {
-        async setSearchParamToStore({ commit, state }, value) {
+        setSearchParamToStore({ commit, dispatch }, value) {
             commit('setSearchParam', value);
             if(value.length > 0){
-                try {
-                    commit('setIsLoading', true)
-                    const response = await axiosClient.get(`${value}&page=${state.selectedPage}`);
-                    console.log(response.data.Search)
-                    commit('setSearchResults', response.data.Search)
-                    commit('setTotalResults', response.data.totalResults)
-                    commit('setTotalPages', response.data.totalResults)
-                } catch (error) {
-                    console.log(error);
-                    commit('setSearchResults', [])
-                    commit('setTotalResults', 0)
-                    commit('setTotalPages', 0)
-                    commit('setIsLoading', false)
-                } finally {
-                    commit('setIsLoading', false)
-                }
+                dispatch('asyncGetData', value)
+            }
+        },
+
+        setCurrentPage({commit, dispatch, state}, value){
+            commit('setCurrentPage', value)
+            dispatch('asyncGetData', state.searchParam)
+        },
+
+        async asyncGetData({ commit, state }, value){
+            try {
+                commit('setIsLoading', true)
+                const response = await axiosClient.get(`${value}&page=${state.selectedPage}`);
+                commit('setSearchResults', response.data.Search)
+                commit('setTotalResults', response.data.totalResults)
+                commit('setTotalPages', response.data.totalResults)
+            } catch (error) {
+                console.log(error);
+                commit('setSearchResults', [])
+                commit('setTotalResults', 0)
+                commit('setTotalPages', 0)
+                commit('setIsLoading', false)
+            } finally {
+                commit('setIsLoading', false)
             }
         }
     }
