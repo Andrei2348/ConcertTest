@@ -1,7 +1,7 @@
 <template>
     <div class="pagination">
-        <div class="pagination__wrapper">
-            <div class="pagination-list" v-if="paginationArray.length > 1">
+        <div class="pagination__wrapper" v-if="paginationArray.length > 1">
+            <div class="pagination-list">
                 <PaginationButton
                 v-for="item in paginationArray"
                 :key="item"

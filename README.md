@@ -1,5 +1,30 @@
-# Vue 3 + Vite
+## О репозитории
+Репозиторий с исходным кодом веб-приложения веб приложения с функционалом поиска фильмов.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+### Необходимо:
+Задача разработать следующий UI используя Vuejs, CSS/SCSS
+Макет https://drive.google.com/file/d/10V0n8aU9D_JvVBM65DNx6-9CjKkij9FO/view?usp=drivesdk
+UI
+
+Шапка: название сайта, поиск, юзер
+Поиск: поисковая фраза, число найденных результатов
+Контент: изображение, имя, год, айди, тип
+Пагинация
+
+## Стек
+- Vue Composition Api
+- Vuex
+- Scss
+
+## Что сделано
+1. Сверстан сайт согласно заданию
+2. Полностью реализован функционал поиска и навигации по результатам поиска посредством пагинации.
+
+## Запуск
+В директории приложения ввести:
+npm i
+npm run dev
+   
+## Автор
+Андрей Макаревич  
