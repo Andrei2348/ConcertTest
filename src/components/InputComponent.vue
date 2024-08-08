@@ -3,22 +3,19 @@
         <input
             class="search__input"
             type="text"
-            placeholder="Введите название фильма"
+            placeholder="Enter the name of the movie"
             @input="searchBeer"
         />
     </div>
 </template>
 
 <script setup>
-  import { ref, watch } from 'vue';
   import debounce from 'lodash.debounce';
   import store from '../store';
 
   const searchBeer = debounce((event) => {
   store.dispatch('setSearchParamToStore', event.target.value);
-  console.log(store.state.searchParam)
 }, 800)
-
 </script>
 
 <style lang="scss" scoped>

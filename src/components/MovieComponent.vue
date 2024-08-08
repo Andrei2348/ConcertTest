@@ -8,7 +8,7 @@
         />
     </div>
     <div class="card__content">
-        <p class="card__title">imdbID: <span>{ id }}</span></p>
+        <p class="card__title">imdbID: <span>{{ id }}</span></p>
         <p class="card__title">Title: <span>{{ title }}</span></p>
         <p class="card__title">Year: <span>{{ year }}</span></p>
         <p class="card__title">Type: <span>{{ type }}</span></p>

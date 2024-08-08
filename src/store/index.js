@@ -3,6 +3,7 @@ import axiosClient from '../axiosClient';
 
 const store = createStore({
     state: {
+        startSearching: false,
         searchParam: '',
         searchResults: [],
         isLoading: false,
@@ -13,6 +14,7 @@ const store = createStore({
     mutations: {
         setSearchParam(state, payload) {
             state.searchParam = payload;
+            state.startSearching = (state.searchParam.length > 0);
         },
         setSearchResults(state, payload) {
             state.searchResults = payload;
@@ -24,7 +26,7 @@ const store = createStore({
             state.totalResults = payload;
         },
         setTotalPages(state, payload) {
-            state.totalResults = Math.ceil(payload/10);
+            state.totalPages = Math.ceil(payload/10);
         }
     },
     getters: {},

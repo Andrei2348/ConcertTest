@@ -1,13 +1,11 @@
 <template>
-    <div class="container">
-        <div class="info__wrapper">
-            <h2 class="info__title">You searched for: {{movie}}, {{count}} results</h2>
-        </div>
+    <div class="info__wrapper">
+        <h2 class="info__title">You searched for: {{movie}}, {{count}} results</h2>
     </div>
 </template>
 
 <script setup>
-    import { computed, onMounted, watch } from 'vue';
+    import { computed } from 'vue';
     import store from '../store';
     const movie = computed(() => store.state.searchParam);
     const count = computed(() => store.state.totalResults);
