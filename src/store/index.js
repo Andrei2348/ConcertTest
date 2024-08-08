@@ -37,6 +37,7 @@ const store = createStore({
     actions: {
         setSearchParamToStore({ commit, dispatch }, value) {
             commit('setSearchParam', value);
+            commit('setCurrentPage', 1);
             if(value.length > 0){
                 dispatch('asyncGetData', value)
             }
