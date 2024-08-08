@@ -16,8 +16,6 @@
     const handleClick = () => {
         emit('switchToPage', props.value)
     }
-
-    
 </script>
 
 <style scoped>

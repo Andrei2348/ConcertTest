@@ -67,33 +67,5 @@ const store = createStore({
     }
 });
       
-        //   Получение данных о корзине пользователя из бд
-        // async asyncGetCartInfo({ commit, dispatch }) {
-        //   try {
-        //     commit('setIsLoading', true);
-        //     const userData = setUserInfo();
-        //     const response = await axiosClient.get(`cart?user_id=${userData.userId}`, { headers: { Authorization: userData.token } });
-        //     const productsList = response.data[0].products;
-        //     if (productsList.length > 0) {
-        //       dispatch('getSum', productsList);
-        //     } else {
-        //       commit('setSumCount', 0);
-        //       commit('setSumPrice', 0);
-        //       commit('setCartIsEmpty', true);
-        //     }
-        //     commit('setCartContainer', productsList);
-        //   } catch (error) {
-        //     console.log(error);
-        //     commit('setCartIsEmpty', true);
-        //     commit('setCartContainer', []);
-        //   } finally {
-        //     commit('setIsLoading', false);
-        //   }
-        // },
-      
-        
-      
-    
-    
 
 export default store;
