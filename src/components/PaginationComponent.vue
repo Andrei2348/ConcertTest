@@ -2,12 +2,15 @@
     <div class="pagination">
         <div class="pagination__wrapper" v-if="paginationArray.length > 1">
             <div class="pagination-list">
+                <PaginationButton :value="1" :title="'<<'" @switchToPage="switchToPage" />
                 <PaginationButton
                 v-for="item in paginationArray"
                 :key="item"
                 :value="item"
+                :title=" String(item)"
                 @switchToPage="switchToPage"
                 />
+                <PaginationButton :value="totalPages" :title="'>>'" @switchToPage="switchToPage" />
             </div>
             <p>Page {{  selectedPage }} of {{ totalPages }}</p>
         </div>
@@ -46,7 +49,7 @@
             paginationArray.value = createArrayFromNumber(store.state.totalPages - 4, arrayLength);
         }
 
-        if(store.state.selectedPage < 2 ){
+        if(store.state.selectedPage <= 2 ){
             paginationArray.value = createArrayFromNumber(1, arrayLength);
         }
     });

@@ -1,15 +1,16 @@
 <template>
     <button class="pagination__button" @click="handleClick" :disabled="value === selectedPage">
-        {{ value }}
+        {{ title }}
     </button>
 </template>
 
 <script setup>
-    import { computed, onMounted, watch, ref } from 'vue';
+    import { computed } from 'vue';
     import store from '../store';
     const emit = defineEmits(['switchToPage'])
     const props = defineProps({
         value: Number,
+        title: String
     })
     const selectedPage = computed(() => store.state.selectedPage);
 
