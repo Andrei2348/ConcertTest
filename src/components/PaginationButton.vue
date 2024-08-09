@@ -22,8 +22,8 @@
 <style scoped>
 .pagination__button{
     height: 30px;
-    width: 30px;
-    border-radius: 50%;
+    padding: 7px 12px;
+    border-radius: 30px;
     cursor: pointer;
     outline: none;
     border: none;
@@ -34,6 +34,7 @@
     font-weight: 500;
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     transition: all ease 0.5s;
 }
